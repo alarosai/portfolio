@@ -53,17 +53,32 @@ const Experience = () => {
 
                 <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2" >
                     <Details
-                        position="Software Engineer" company="Google"
-                        companyLink="www.google.com"
-                        time="2022-Present" address="Mountain View, CA"
-                        work="Worked on a team responsible for developing new features for Google's 
-                        search engine, including improving the accuracy and relevance of search results and 
-                        developing new tools for data analysis and visualization."
+                        position="Product Owner - Cemex Project" company="Neoris"
+                        companyLink="https://epamneoris.com/"
+                        time="Nov 2024 - May 2025" address="Ciudad, Mexico (Remote)"
+                        work={`
+                            ● Optimized cash collection operations by leading a cross-functional initiative to design KPIs, build a custom API, and launch an AI-powered chatbot used by 90% of collectors, improving visibility and streamlining over $50M in daily payments and reaching 90% adoption.
+                            <br />
+                            ● Directed product strategy for migrating 10+ financial workflows into a centralized data warehouse on Azure, enabling standardized reporting on
+                                $5B+ in U.S. payments, reducing preparation time by 35%, and ensuring 99.9% data quality./n
+                            <
+                            ● Spearheaded truck fleet monitoring project by building reporting tools to synthesize KPIs on delivery performance and maintenance, presenting
+                                business cases to secure $200K in consulting contracts and influence stakeholder investment in advanced data analytics initiatives.
+                            `}
                     />
                     <Details
 
-                        position="Software Engineer" company="Google"
-                        companyLink="www.google.com"
+                        position="Product Manager - The Home Depot Project" company="Neoris"
+                        companyLink="https://epamneoris.com/"
+                        time="Aug 2023 - Oct 2024" address="Toronto, Canada (Remote)"
+                        work="Worked on a team responsible for developing new features for Google's 
+search engine, including improving the accuracy and relevance of search results and 
+developing new tools for data analysis and visualization."
+                    />
+                    <Details
+
+                        position="Senior Data Engineer" company="Interseguro"
+                        companyLink="https://www.interseguro.pe/"
                         time="2022-Present" address="Mountain View, CA"
                         work="Worked on a team responsible for developing new features for Google's 
 search engine, including improving the accuracy and relevance of search results and 
@@ -71,8 +86,8 @@ developing new tools for data analysis and visualization."
                     />
                     <Details
 
-                        position="Software Engineer" company="Google"
-                        companyLink="www.google.com"
+                        position="Software Engineer" company="Tottus"
+                        companyLink="https://www.tottus.com.pe/tottus-pe"
                         time="2022-Present" address="Mountain View, CA"
                         work="Worked on a team responsible for developing new features for Google's 
 search engine, including improving the accuracy and relevance of search results and 
@@ -80,8 +95,8 @@ developing new tools for data analysis and visualization."
                     />
                     <Details
 
-                        position="Software Engineer" company="Google"
-                        companyLink="www.google.com"
+                        position="Software Engineer" company="Vooxell"
+                        companyLink="https://vooxell.com/"
                         time="2022-Present" address="Mountain View, CA"
                         work="Worked on a team responsible for developing new features for Google's 
 search engine, including improving the accuracy and relevance of search results and 
