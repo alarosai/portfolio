@@ -15,10 +15,37 @@ module.exports = {
         mont: ['var(--font-mont)', ...fontFamily.sans],
       },
       colors: {
-        dark: "#1b1b1b",
-        light: "#f5f5f5",
-        primary: "#B63E96", // 240,86,199
-        primaryDark: "#58E6D9", // 80,230,217      
+        dark: "#0F172A", // brand-neutral-900
+        light: "#F8FAFC", // brand-neutral-50
+        primary: "#0EA5E9", // brand-primary
+        primaryDark: "#0284C7", // brand-primary-dark
+        secondary: "#6366F1", // brand-secondary
+        secondaryDark: "#4F46E5", // brand-secondary-dark
+
+        // Brand Palette
+        "brand-primary": "#0EA5E9",
+        "brand-primary-dark": "#0284C7",
+        "brand-primary-light": "#38BDF8",
+        "brand-secondary": "#6366F1",
+        "brand-secondary-dark": "#4F46E5",
+        "brand-secondary-light": "#818CF8",
+
+        // Neutrals
+        "brand-neutral-50": "#F8FAFC",
+        "brand-neutral-100": "#F1F5F9",
+        "brand-neutral-200": "#E2E8F0",
+        "brand-neutral-300": "#CBD5E1",
+        "brand-neutral-400": "#94A3B8",
+        "brand-neutral-500": "#64748B",
+        "brand-neutral-600": "#475569",
+        "brand-neutral-700": "#334155",
+        "brand-neutral-800": "#1E293B",
+        "brand-neutral-900": "#0F172A",
+
+        // Semantic
+        "brand-success": "#10B981",
+        "brand-warning": "#F59E0B",
+        "brand-error": "#EF4444",
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
@@ -72,4 +99,3 @@ module.exports = {
   },
   plugins: [],
 }
-

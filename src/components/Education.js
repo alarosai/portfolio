@@ -15,10 +15,10 @@ const Details = ({ type, time, place, info }) => {
                 whileInView={{ y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
             >
-                <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>
+                <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg text-brand-neutral-900 dark:text-brand-neutral-50'>
                     {type}
                 </h3>
-                <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
+                <span className='capitalize font-medium text-brand-neutral-600 dark:text-brand-neutral-400 xs:text-sm'>
                     {time} | {place}
                 </span>
                 <p className='font-medium w-full md:text-sm'>
@@ -48,11 +48,18 @@ const Education = () => {
 
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+                    className="absolute left-9 top-0 w-[4px] h-full origin-top bg-gradient-to-b from-brand-primary to-brand-secondary
                 md:w-[2px] md:left-[30px] xs:left-[20px]
                 "/>
 
                 <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2" >
+                    <Details
+                        type="Master of Business Administration (STEM)"
+                        time="2025-2027"
+                        place="Simon Business School - University of Rochester"
+                        info="Concentrations: Product Management, Corporate Strategy, Marketing and Business Analytics "
+                    />
+
                     <Details
                         type="Bachelor Of Science In Mechatronics Engineering"
                         time="2014-2019"

@@ -4,7 +4,7 @@ import LiIcon from './LiIcon'
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
     const ref = useRef(null);
-    return( <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
+    return (<li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
 
         <LiIcon reference={ref} />
         <motion.div
@@ -14,12 +14,12 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         >
             <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>{position}&nbsp; <a href={companyLink}
                 target="_blank"
-                className='text-primary dark:text-primaryDark capitalize'
+                className='text-brand-primary dark:text-brand-primary-dark capitalize'
             >
                 @{company}
             </a>
             </h3>
-            <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
+            <span className='capitalize font-medium text-brand-neutral-600 dark:text-brand-neutral-400 xs:text-sm'>
                 {time} | {address}
             </span>
             <p className='font-medium w-full md:text-sm'> {work} </p>
@@ -47,60 +47,65 @@ const Experience = () => {
 
                 <motion.div
                     style={{ scaleY: scrollYProgress }}
-                    className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
+                    className="absolute left-9 top-0 w-[4px] h-full origin-top bg-gradient-to-b from-brand-primary to-brand-secondary
                     md:w-[2px] md:left-[30px] xs:left-[20px]
                     " />
 
                 <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2" >
                     <Details
-                        position="Product Owner - Cemex Project" company="Neoris"
+                        position="Product Manager - Cemex Project" company="Neoris"
                         companyLink="https://epamneoris.com/"
-                        time="Nov 2024 - May 2025" address="Ciudad, Mexico (Remote)"
-                        work={`
-                            ● Optimized cash collection operations by leading a cross-functional initiative to design KPIs, build a custom API, and launch an AI-powered chatbot used by 90% of collectors, improving visibility and streamlining over $50M in daily payments and reaching 90% adoption.
-                            <br />
-                            ● Directed product strategy for migrating 10+ financial workflows into a centralized data warehouse on Azure, enabling standardized reporting on
-                                $5B+ in U.S. payments, reducing preparation time by 35%, and ensuring 99.9% data quality./n
-                            <
-                            ● Spearheaded truck fleet monitoring project by building reporting tools to synthesize KPIs on delivery performance and maintenance, presenting
-                                business cases to secure $200K in consulting contracts and influence stakeholder investment in advanced data analytics initiatives.
+                        time="Building Materials" address="Mexico (Remote)"
+                        work={`Led the end-to-end delivery of AI-driven and analytics products, 
+                            including a cash-collection chatbot streamlining $50M+ in payments and 
+                            revenue models driving a 2% sales increase. By bridging engineering 
+                            and stakeholder needs, I secured $200K in new contracts and achieved 90% user adoption.
                             `}
                     />
                     <Details
 
                         position="Product Manager - The Home Depot Project" company="Neoris"
                         companyLink="https://epamneoris.com/"
-                        time="Aug 2023 - Oct 2024" address="Toronto, Canada (Remote)"
-                        work="Worked on a team responsible for developing new features for Google's 
-search engine, including improving the accuracy and relevance of search results and 
-developing new tools for data analysis and visualization."
+                        time="Retail" address="Canada (Remote)"
+                        work="Directed a team of 8 to migrate $5B in annual transaction pipelines, unlocking $2M+ in 
+                        margin improvements. By launching AI-driven assortment and forecasting tools, I boosted 
+                        category profitability by 15% and enhanced revenue projection accuracy across 180+ stores."
                     />
                     <Details
 
                         position="Senior Data Engineer" company="Interseguro"
                         companyLink="https://www.interseguro.pe/"
-                        time="2022-Present" address="Mountain View, CA"
-                        work="Worked on a team responsible for developing new features for Google's 
-search engine, including improving the accuracy and relevance of search results and 
-developing new tools for data analysis and visualization."
+                        time="Insurance" address="Peru"
+                        work="Spearheaded product roadmaps for actuarial and market intelligence tools, integrating 
+                        competitor datasets to shape new pricing strategies. These initiatives decreased financial 
+                        risk exposure by 10% and boosted overall profitability by 10%."
                     />
                     <Details
 
-                        position="Software Engineer" company="Tottus"
+                        position="Data Engineer" company="Tottus"
                         companyLink="https://www.tottus.com.pe/tottus-pe"
-                        time="2022-Present" address="Mountain View, CA"
-                        work="Worked on a team responsible for developing new features for Google's 
-search engine, including improving the accuracy and relevance of search results and 
-developing new tools for data analysis and visualization."
+                        time="Retail" address="Peru"
+                        work="Managed large-scale cloud migrations and the launch of a web-based visual analytics tool, 
+                        saving $60K annually in infrastructure costs. By partnering with UI/UX and engineering, I 
+                        increased dashboard adoption by 40% to accelerate data-driven decision-making."
                     />
                     <Details
 
-                        position="Software Engineer" company="Vooxell"
-                        companyLink="https://vooxell.com/"
-                        time="2022-Present" address="Mountain View, CA"
-                        work="Worked on a team responsible for developing new features for Google's 
-search engine, including improving the accuracy and relevance of search results and 
-developing new tools for data analysis and visualization."
+                        position="Data Engineer Junior" company="Auna"
+                        companyLink="https://www.aunainvestors.com/"
+                        time="Healthcare" address="Peru"
+                        work="Partnered with product designers to build conversion-tracking dashboards that identified 
+                        friction points in the insurance sales funnel, ultimately driving an 18% increase in 
+                        lead-to-sale conversions."
+                    />
+                    <Details
+
+                        position="Automation Engineer" company="Epiroc"
+                        companyLink="https://www.epiroc.com/"
+                        time="Mining" address="Peru"
+                        work="Defined a strategic roadmap for equipment maintenance contracts by analyzing service 
+                        cost structures, successfully improving contract margins by 12% for top-tier global 
+                        mining clients."
                     />
                 </ul>
             </div>

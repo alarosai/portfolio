@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const Skill = ({ name, x, y }) => {
     return (
         <motion.div
-            className='flex items-center justify-center rounded-full font-semibold bg-dark text-light
-        py-3 px-6 shadow-dark cursor-pointer absolute dark:text-dark dark:bg-light
+            className='flex items-center justify-center rounded-full font-semibold bg-brand-neutral-900 text-brand-neutral-50
+        py-3 px-6 shadow-dark cursor-pointer absolute dark:text-brand-neutral-900 dark:bg-brand-neutral-50
         lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent
-        xs:text-dark xs:dark:text-light xs:font-bold
+        xs:text-brand-neutral-900 xs:dark:text-brand-neutral-50 xs:font-bold
         '
             whileHover={{ scale: 1.05 }}
             initial={{ x: 0, y: 0 }}
@@ -31,8 +31,8 @@ const Skills = () => {
             sm:bg-circularLightSm sm:dark:bg-circularDarkSm
             '>
                 <motion.div
-                    className='flex items-center justify-center rounded-full font-semibold bg-dark text-light
-                    p-8 shadow-dark cursor-pointer  dark:text-dark dark:bg-light lg:p-6 md:p-4 xs:text-xs xs:p-2
+                    className='flex items-center justify-center rounded-full font-semibold bg-brand-neutral-900 text-brand-neutral-50
+                    p-8 shadow-dark cursor-pointer  dark:text-brand-neutral-900 dark:bg-brand-neutral-50 lg:p-6 md:p-4 xs:text-xs xs:p-2
                 '
                     whileHover={{ scale: 1.05 }}
                 >
