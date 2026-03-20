@@ -91,32 +91,33 @@ const TRANSFORMATION_PILLARS = [
 const PROJECTS = [
   {
     id: 0,
+    title: "Peru Festivities Explorer",
+    tagline: "Interactive Map • Web App",
+    desc: "An interactive, beautifully designed map-based web application to discover the cultural celebrations of Peru.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    gradient: "from-brand-primary-dark to-brand-neutral-900",
+    textAccent: "text-brand-primary",
+    image: "/images/projects/peru-festivities.png"
+  },
+  {
+    id: 1,
     title: "Quantum Dynamics",
     tagline: "Real-time Analytics • Cloud Infra",
     desc: "Architecting a real-time data processing engine that reduced latency by 40% for high-frequency trading. Built with robust fault tolerance and sub-millisecond precision.",
     tags: ["React", "AWS Kinesis", "Python"],
     // Visual theme for hero image background
-    gradient: "from-brand-primary-dark to-brand-neutral-900",
-    textAccent: "text-brand-primary"
-  },
-  {
-    id: 1,
-    title: "Nexus Platform",
-    tagline: "API Integration • Scalability",
-    desc: "Designing a unified API gateway that streamlined integration for 50+ enterprise partners, boosting ecosystem growth by 200%.",
-    tags: ["Node.js", "GraphQL", "PostgreSQL"],
     gradient: "from-brand-secondary-dark to-brand-neutral-900",
     textAccent: "text-brand-secondary"
   },
   {
     id: 2,
-    title: "Risk Horizon",
-    tagline: "Predictive Modeling • Finance",
-    desc: "AI-driven actuarial tools integrating competitor datasets to optimize pricing strategies and reduce risk exposure.",
-    tags: ["Python", "TensorFlow", "Tableau"],
+    title: "Nexus Platform",
+    tagline: "API Integration • Scalability",
+    desc: "Designing a unified API gateway that streamlined integration for 50+ enterprise partners, boosting ecosystem growth by 200%.",
+    tags: ["Node.js", "GraphQL", "PostgreSQL"],
     gradient: "from-brand-success to-brand-neutral-900",
     textAccent: "text-brand-success"
-  }
+  },
 ]
 
 export default function Home() {
@@ -247,13 +248,14 @@ export default function Home() {
                     transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-neutral-900">
-                      Most product teams drown in data but <span className="text-brand-error">starve for insight.</span>
+                      Great AI products don&apos;t start with models. They start with unmet needs.
                     </h2>
+
                     <p className="text-lg text-brand-neutral-600 mb-6">
-                      We&apos;ve all seen it: roadmaps built on gut feelings, features shipped without metrics, and engineering teams burning out on &quot;urgent&quot; pivots.
+                      We&apos;ve all seen it: roadmaps built on gut feelings, features shipped without metrics, and engineering burning out on &quot;urgent&quot; pivots.
                     </p>
                     <p className="text-lg text-brand-neutral-600 font-medium">
-                      The gap between big data and smart decisions is where products die.
+                      Customers wrote the roadmap. Someone just needs to read it.
                     </p>
                   </motion.div>
 
@@ -264,15 +266,16 @@ export default function Home() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="bg-white p-8 rounded-2xl shadow-xl border border-brand-neutral-100"
                   >
-                    <h3 className="text-xl font-bold mb-4 text-brand-primary-dark">The Bridge</h3>
+                    <h3 className="text-xl font-bold mb-4 text-brand-primary-dark">How I Work</h3>
                     <p className="text-brand-neutral-600 mb-6">
-                      I transitioned from pure Data Engineering to Product Management to fix this. I don&apos;t just ask &quot;can we build it?&quot; — I ask &quot;should we build it, and how will we measure it?&quot;
+                      By combining technical feasibility with a product-led growth mindset, I ensure every feature delivers measurable value and aligns with the business strategy.
                     </p>
                     <ul className="space-y-4">
                       {[
+                        "Customer pain obsession",
                         "Deep technical literacy",
-                        "Data-driven prioritization",
-                        "Clear execution pathways"
+                        "Data backed decisions",
+                        "Rapid AI prototyping"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-brand-neutral-700">
                           <span className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-success/10 text-brand-success flex items-center justify-center text-sm">✓</span>
@@ -313,14 +316,32 @@ export default function Home() {
                 {/* LEFT: HERO IMAGE DISPLAY */}
                 <div className="w-full order-2 lg:order-none h-[600px] lg:h-[800px] relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-brand-neutral-800">
                   <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeProject}
-                      initial={{ opacity: 0, scale: 1.03 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className={`absolute inset-0 bg-gradient-to-br ${PROJECTS[activeProject].gradient}`}
-                    />
+                    {PROJECTS[activeProject].image ? (
+                      <motion.div
+                        key={activeProject + "-img"}
+                        initial={{ opacity: 0, scale: 1.03 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={PROJECTS[activeProject].image}
+                          alt={PROJECTS[activeProject].title}
+                          fill
+                          className="object-cover object-left-top"
+                        />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key={activeProject}
+                        initial={{ opacity: 0, scale: 1.03 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className={`absolute inset-0 bg-gradient-to-br ${PROJECTS[activeProject].gradient}`}
+                      />
+                    )}
                   </AnimatePresence>
 
                   {/* Content Overlay on Image (Optional, for extra context) */}
