@@ -86,7 +86,7 @@ const NavBar = () => {
                 </nav>
 
                 <nav className="flex items-center justify-center flex-wrap">
-                    <motion.a href="https://twitter.com" target={"_blank"}
+                    <motion.a href="https://github.com/alarosai" target={"_blank"}
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
                         className='w-6 mx-3 text-dark dark:text-light hover:text-primary transition-colors'
@@ -99,8 +99,6 @@ const NavBar = () => {
                         className='w-6 mx-3 text-dark dark:text-light hover:text-primary transition-colors'>
                         <LinkedInIcon />
                     </motion.a>
-
-
 
                     <button
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}

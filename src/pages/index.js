@@ -586,13 +586,13 @@ export default function Home() {
           </section>
 
           {/* 6. SECONDARY CTA */}
-          <section id="contact" className="w-full px-6 py-24 bg-brand-neutral-50 border-t border-brand-neutral-200">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-neutral-900 mb-6">
-                Ready to turn insight into momentum?
+          <section id="contact" className="w-full px-6 py-24 bg-white border-t border-brand-neutral-200">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-5xl text-brand-neutral-900 mb-6 font-bold">
+                Let&apos;s chat!
               </h2>
-              <p className="text-lg text-brand-neutral-600 mb-10">
-                I&apos;m currently open for new opportunities. Let&apos;s discuss how I can help your team ship better products.
+              <p className="text-brand-neutral-900 mb-10">
+                Fill out the form below or <a href="https://www.linkedin.com/in/alarosai/" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-brand-primary transition-colors">connect with me!</a>
               </p>
 
               {submitted ? (
@@ -604,27 +604,59 @@ export default function Home() {
                   Thanks! I&apos;ll be in touch shortly.
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-6 py-4 rounded-full border border-brand-neutral-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent bg-white shadow-sm"
-                  />
-                  <button
-                    type="submit"
-                    className="px-8 py-4 bg-brand-neutral-900 text-white font-bold rounded-full hover:bg-brand-primary transition-colors shadow-lg"
-                  >
-                    Let&apos;s Talk
-                  </button>
+                <form onSubmit={handleSubscribe} className="flex flex-col gap-6">
+                  <div>
+                    <p className="block text-brand-neutral-900 mb-2">Name</p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <div className="flex-1">
+                        <label className="block text-sm text-brand-neutral-600 mb-1">First Name <span className="text-brand-neutral-400">(required)</span></label>
+                        <input
+                          type="text"
+                          required
+                          className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <label className="block text-sm text-brand-neutral-600 mb-1">Last Name <span className="text-brand-neutral-400">(required)</span></label>
+                        <input
+                          type="text"
+                          required
+                          className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-brand-neutral-900 mb-1">Email <span className="text-brand-neutral-400">(required)</span></label>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-brand-neutral-900 mb-1">Message <span className="text-brand-neutral-400">(required)</span></label>
+                    <textarea
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50 resize-y"
+                    ></textarea>
+                  </div>
+
+                  <div className="mt-2">
+                    <button
+                      type="submit"
+                      className="px-10 py-3 bg-black text-white hover:bg-neutral-800 transition-colors"
+                    >
+                      Send
+                    </button>
+                  </div>
                 </form>
               )}
-
-              <p className="mt-8 text-sm text-brand-neutral-400">
-                Prefer direct email? <a href="mailto:hello@albertolarosa.com" className="text-brand-primary hover:underline">hello@albertolarosa.com</a>
-              </p>
             </div>
           </section>
 

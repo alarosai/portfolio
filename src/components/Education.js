@@ -56,21 +56,21 @@ const Education = () => {
                     <Details
                         type="Master of Business Administration (STEM)"
                         time="2025-2027"
-                        place="Simon Business School - University of Rochester"
+                        place="Simon Business School - University of Rochester 🇺🇸"
                         info="Concentrations: Product Management, Corporate Strategy, Marketing and Business Analytics "
                     />
 
                     <Details
                         type="Bachelor Of Science In Mechatronics Engineering"
                         time="2014-2019"
-                        place="Pontificia Universidad Católica del Perú (PUCP)"
+                        place="Pontificia Universidad Católica del Perú (PUCP) 🇵🇪"
                         info="Relevant courses included Object-oriented programming, Artificial Intelligence,
                         and Artificial Intelligence."
                     />
                     <Details
                         type="Exchange Semester In Computer Science"
                         time="2018-2019"
-                        place="Technische Hochschule Ulm - University of Applied Sciences (THU)"
+                        place="Technische Hochschule Ulm - University of Applied Sciences (THU) 🇩🇪"
                         info="Relevant courses included Data Structures and Algorithms, Computer Systems Engineering,
                         and Artificial Intelligence."
                     />

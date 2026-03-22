@@ -5,9 +5,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React, { useEffect, useRef } from "react";
 import profilePic from "../../public/images/profile/Gray_Chair_Profile_Pic.jpeg";
-import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
+import Certifications from '@/components/Certifications';
 import TransitionEffect from '@/components/TransitionEffect';
 
 const AnimatedNumbers = ({ value }) => {
@@ -44,7 +44,10 @@ const about = () => {
             <TransitionEffect />
             <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-8'>
-                    <AnimatedText text="Passion Fuels Purpose!" className='mb-16 lg:!text-4xl sm:!text-6xl xs:!text-4xl sm:mb-8 !text-transparent !bg-clip-text !bg-gradient-to-r !from-brand-primary !to-brand-secondary display-inline-block' />
+                    <div className="w-full flex flex-col items-center justify-center mb-16 sm:mb-8 -space-y-6 lg:-space-y-4 sm:-space-y-2">
+                        <AnimatedText text="Engineering Intuition" className='lg:!text-6xl sm:!text-4xl xs:!text-4xl !text-brand-neutral-900 dark:!text-brand-neutral-50' />
+                        <AnimatedText text="Product Thinking" className='lg:!text-6xl sm:!text-4xl xs:!text-4xl !text-transparent !bg-clip-text !bg-gradient-to-r !from-brand-primary !to-brand-secondary' />
+                    </div>
                     <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>
                         <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-brand-neutral-600 dark:text-brand-neutral-400'>A little bit about me ...</h2>
@@ -105,9 +108,9 @@ const about = () => {
                             </div>
                         </div>
                     </div>
-                    <Skills />
                     <Experience />
                     <Education />
+                    <Certifications />
                 </Layout>
             </main>
         </>
