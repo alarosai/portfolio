@@ -5,8 +5,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg"
 import projectPeru from "../../public/images/projects/peru-festivities.png"
+import projectNlToSql from "../../public/images/projects/nl-to-sql.png"
+import projectStock from "../../public/images/projects/stock-portfolio-dashboard.png"
 import { motion } from "framer-motion";
 import TransitionEffect from '@/components/TransitionEffect'
 
@@ -119,43 +120,40 @@ const projects = () => {
             <TransitionEffect />
             <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
-                    <AnimatedText text="Imagination Trumps Knowledge!"
-                        className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'
-                    />
+                    <div className="w-full flex flex-col items-center justify-center mb-16 sm:mb-8 -space-y-6 lg:-space-y-4 sm:-space-y-2">
+                        <AnimatedText text="Product Portfolio" className='lg:!text-6xl sm:!text-4xl xs:!text-4xl !text-brand-neutral-900 dark:!text-brand-neutral-50' />
+                        <AnimatedText text="Innovation Lab" className='lg:!text-6xl sm:!text-4xl xs:!text-4xl !text-transparent !bg-clip-text !bg-gradient-to-r !from-brand-primary !to-brand-secondary' />
+                    </div>
 
                     <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
                         <div className='col-span-12'>
                             <FeaturedProject
+                                title="NL-to-SQL Brokerage Query Agent"
+                                img={projectNlToSql}
+                                summary="An AI-powered natural language interface for querying brokerage data. Ask questions in plain English and the agent generates SQL through LLM, runs it against a SQLite database, and returns results with a natural-language summary."
+                                link="https://nl-to-sql-brokerage-query-agent.vercel.app/"
+                                github="https://github.com/alarosai/NL-to-SQL-Brokerage-Query-Agent"
+                                type="Featured Project"
+                            />
+                        </div>
+                        <div className='col-span-6 sm:col-span-12'>
+                            <Project
                                 title="Peru Festivities Explorer"
                                 img={projectPeru}
                                 summary="An interactive, beautifully designed map-based web application to discover the cultural celebrations of Peru."
-                                link="https://github.com/alarosai/peru-festivity-expplorer"
+                                link="https://peru-festivity-expplorer.vercel.app/"
                                 github="https://github.com/alarosai/peru-festivity-expplorer"
-                                type="Featured Project"
+                                type="Project"
                             />
                         </div>
                         <div className='col-span-6 sm:col-span-12'>
                             <Project
-                                title="Crypto Screener Application"
-                                img={project1}
-                                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                            It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                            local currency"
-                                link="/"
-                                github="/"
-                                type="Featured Project"
-                            />
-                        </div>
-                        <div className='col-span-6 sm:col-span-12'>
-                            <Project
-                                title="Crypto Screener Application"
-                                img={project1}
-                                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                            It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                            local currency"
-                                link="/"
-                                github="/"
-                                type="Featured Project"
+                                title="Stock Portfolio Analyzer"
+                                img={projectStock}
+                                summary="A data pipeline and Tableau dashboard to analyze stock portfolio performance, calculating XIRR to compare returns against the S&P 500."
+                                link="https://github.com/alarosai/Stock-Portfolio-Analyzer"
+                                github="https://github.com/alarosai/Stock-Portfolio-Analyzer"
+                                type="Project"
                             />
                         </div>
                     </div>
