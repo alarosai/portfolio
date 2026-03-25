@@ -139,11 +139,32 @@ export default function Home() {
     setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
   }
 
-  const handleSubscribe = (e) => {
-    e.preventDefault()
-    if (email) {
-      setSubmitted(true)
-      setEmail('')
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // Formspree requires the form data:
+    const data = new FormData(form);
+
+    // Replace YOUR_FORM_ID with your actual Formspree form ID
+    const formspreeEndpoint = "https://formspree.io/f/xqegzvwq";
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+        setEmail('');
+      } else {
+        alert("Oops! There was a problem submitting your form");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form");
     }
   }
 
@@ -614,6 +635,7 @@ export default function Home() {
                         <label className="block text-sm text-brand-neutral-600 mb-1">First Name <span className="text-brand-neutral-400">(required)</span></label>
                         <input
                           type="text"
+                          name="firstName"
                           required
                           className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50"
                         />
@@ -622,6 +644,7 @@ export default function Home() {
                         <label className="block text-sm text-brand-neutral-600 mb-1">Last Name <span className="text-brand-neutral-400">(required)</span></label>
                         <input
                           type="text"
+                          name="lastName"
                           required
                           className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50"
                         />
@@ -633,6 +656,7 @@ export default function Home() {
                     <label className="block text-brand-neutral-900 mb-1">Email <span className="text-brand-neutral-400">(required)</span></label>
                     <input
                       type="email"
+                      name="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -643,6 +667,7 @@ export default function Home() {
                   <div>
                     <label className="block text-brand-neutral-900 mb-1">Message <span className="text-brand-neutral-400">(required)</span></label>
                     <textarea
+                      name="message"
                       required
                       rows={5}
                       className="w-full px-4 py-3 rounded-none border border-brand-neutral-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary bg-brand-neutral-50/50 resize-y"
