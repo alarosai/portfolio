@@ -7,6 +7,10 @@ import { useState, useEffect } from 'react'
 
 import TransitionEffect from '@/components/TransitionEffect'
 
+import projectPeru from "../../public/images/projects/peru-festivities.png"
+import projectNlToSql from "../../public/images/projects/nl-to-sql.png"
+import projectStock from "../../public/images/projects/stock-portfolio-dashboard.png"
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -91,32 +95,37 @@ const TRANSFORMATION_PILLARS = [
 const PROJECTS = [
   {
     id: 0,
+    title: "NL-to-SQL Brokerage Query Agent",
+    tagline: "AI Interface • Database Querying",
+    desc: "An AI-powered natural language interface for querying brokerage data. Ask questions in plain English and the agent generates SQL through LLM, runs it against a SQLite database, and returns results with a natural-language summary.",
+    tags: ["Python", "LLM", "SQLite"],
+    gradient: "from-brand-primary-dark to-brand-neutral-900",
+    textAccent: "text-brand-primary",
+    image: projectNlToSql,
+    github: "https://github.com/alarosai/NL-to-SQL-Brokerage-Query-Agent"
+  },
+  {
+    id: 1,
     title: "Peru Festivities Explorer",
     tagline: "Interactive Map • Web App",
     desc: "An interactive, beautifully designed map-based web application to discover the cultural celebrations of Peru.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    gradient: "from-brand-primary-dark to-brand-neutral-900",
-    textAccent: "text-brand-primary",
-    image: "/images/projects/peru-festivities.png"
-  },
-  {
-    id: 1,
-    title: "Quantum Dynamics",
-    tagline: "Real-time Analytics • Cloud Infra",
-    desc: "Architecting a real-time data processing engine that reduced latency by 40% for high-frequency trading. Built with robust fault tolerance and sub-millisecond precision.",
-    tags: ["React", "AWS Kinesis", "Python"],
     // Visual theme for hero image background
     gradient: "from-brand-secondary-dark to-brand-neutral-900",
-    textAccent: "text-brand-secondary"
+    textAccent: "text-brand-secondary",
+    image: projectPeru,
+    github: "https://github.com/alarosai/peru-festivity-expplorer"
   },
   {
     id: 2,
-    title: "Nexus Platform",
-    tagline: "API Integration • Scalability",
-    desc: "Designing a unified API gateway that streamlined integration for 50+ enterprise partners, boosting ecosystem growth by 200%.",
-    tags: ["Node.js", "GraphQL", "PostgreSQL"],
+    title: "Stock Portfolio Analyzer",
+    tagline: "Data Pipeline • Dashboard",
+    desc: "A data pipeline and Tableau dashboard to analyze stock portfolio performance, calculating XIRR to compare returns against the S&P 500.",
+    tags: ["Python", "Tableau", "Data Analysis"],
     gradient: "from-brand-success to-brand-neutral-900",
-    textAccent: "text-brand-success"
+    textAccent: "text-brand-success",
+    image: projectStock,
+    github: "https://github.com/alarosai/Stock-Portfolio-Analyzer"
   },
 ]
 
@@ -315,34 +324,30 @@ export default function Home() {
 
                 {/* LEFT: HERO IMAGE DISPLAY */}
                 <div className="w-full order-2 lg:order-none h-[600px] lg:h-[800px] relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-brand-neutral-800">
-                  <AnimatePresence mode="wait">
-                    {PROJECTS[activeProject].image ? (
-                      <motion.div
-                        key={activeProject + "-img"}
-                        initial={{ opacity: 0, scale: 1.03 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="absolute inset-0"
-                      >
+                  {PROJECTS.map((project, index) => (
+                    <motion.div
+                      key={project.id + "-visual"}
+                      initial={false}
+                      animate={{ 
+                        opacity: activeProject === index ? 1 : 0,
+                        scale: activeProject === index ? 1 : 1.03,
+                        zIndex: activeProject === index ? 10 : 0
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="absolute inset-0 pointer-events-none"
+                    >
+                      {project.image ? (
                         <Image
-                          src={PROJECTS[activeProject].image}
-                          alt={PROJECTS[activeProject].title}
+                          src={project.image}
+                          alt={project.title}
                           fill
-                          className="object-cover object-left-top"
+                          className="object-cover object-center"
                         />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key={activeProject}
-                        initial={{ opacity: 0, scale: 1.03 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className={`absolute inset-0 bg-gradient-to-br ${PROJECTS[activeProject].gradient}`}
-                      />
-                    )}
-                  </AnimatePresence>
+                      ) : (
+                        <div className={`w-full h-full bg-gradient-to-br ${project.gradient}`} />
+                      )}
+                    </motion.div>
+                  ))}
 
                   {/* Content Overlay on Image (Optional, for extra context) */}
                   <div className="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none">
@@ -361,10 +366,12 @@ export default function Home() {
                 {/* RIGHT: INTERACTIVE LIST */}
                 <div className="w-full order-1 lg:order-none flex flex-col justify-center h-full">
                   {PROJECTS.map((project, index) => (
-                    <div
+                    <Link
+                      href={project.github}
+                      target="_blank"
                       key={project.id}
                       onMouseEnter={() => setActiveProject(index)}
-                      className={`group relative p-3 rounded-2xl cursor-pointer transition-all duration-300 border mb-3
+                      className={`block group relative p-3 rounded-2xl cursor-pointer transition-all duration-300 border mb-3
                                 ${activeProject === index
                           ? "bg-white border-white scale-105 shadow-xl z-10"
                           : "bg-transparent border-white/5 hover:bg-white/5 hover:border-white/10"
@@ -409,7 +416,7 @@ export default function Home() {
                           ))}
                         </div>
                       </motion.div>
-                    </div>
+                    </Link>
                   ))}
 
                   <div className="mt-8 pl-4">
