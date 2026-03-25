@@ -33,14 +33,9 @@ const TESTIMONIALS = [
     role: "President, Simon Product Management Club"
   },
   {
-    quote: "He transformed our messy data into a clear roadmap that actually drove revenue.",
-    name: "Michael Chang",
-    role: "CTO, StartupX"
-  },
-  {
     quote: "One of the few PMs who can talk code with engineers and strategy with executives.",
-    name: "Elena Rodriguez",
-    role: "Director of Product, FinServe"
+    name: "Carlos Pua",
+    role: "Chief Data Officer, Entel"
   }
 ]
 
@@ -328,7 +323,7 @@ export default function Home() {
                     <motion.div
                       key={project.id + "-visual"}
                       initial={false}
-                      animate={{ 
+                      animate={{
                         opacity: activeProject === index ? 1 : 0,
                         scale: activeProject === index ? 1 : 1.03,
                         zIndex: activeProject === index ? 10 : 0
