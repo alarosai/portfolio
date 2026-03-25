@@ -182,7 +182,7 @@ export default function Home() {
               <motion.h1 variants={fadeInUp} className="text-7xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-brand-neutral-900 leading-[1.1]">
                 Alberto La Rosa <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
-                  Product Manager
+                  AI Product Manager
                 </span>
               </motion.h1>
 

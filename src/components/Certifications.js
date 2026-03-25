@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
 
-const Details = ({ type, time, place, info }) => {
+const Details = ({ type, time, place, info, link }) => {
     const ref = useRef(null);
     return (
         <li
@@ -15,13 +15,20 @@ const Details = ({ type, time, place, info }) => {
                 whileInView={{ y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
             >
-                <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg text-brand-neutral-900 dark:text-brand-neutral-50">
-                    {type}
-                </h3>
-                <span className="capitalize font-medium text-brand-neutral-600 dark:text-brand-neutral-400 xs:text-sm">
-                    {time} | {place}
-                </span>
-                <p className="font-medium w-full md:text-sm">{info}</p>
+                <a 
+                    href={link || "#"} 
+                    target={link && link !== "#" ? "_blank" : "_self"} 
+                    rel="noopener noreferrer" 
+                    className="group"
+                >
+                    <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg text-brand-neutral-900 dark:text-brand-neutral-50 group-hover:underline group-hover:text-brand-primary dark:group-hover:text-brand-primary transition-colors">
+                        {type}
+                    </h3>
+                    <span className="capitalize font-medium text-brand-neutral-600 dark:text-brand-neutral-400 xs:text-sm">
+                        {time} | {place}
+                    </span>
+                    <p className="font-medium w-full md:text-sm">{info}</p>
+                </a>
             </motion.div>
         </li>
     );
@@ -51,31 +58,42 @@ const Certifications = () => {
                         time="Issued Oct 2025"
                         place="Hugging Face"
                         info="Skills: Python · LLM architecture · GenAI · Memory & State Management"
+                        link="#"
                     />
-
+                    <Details
+                        type="Claude 101"
+                        time="Issued Mar 2026"
+                        place="Anthropic"
+                        info="Skills: Claude AI · Prompt Engineering · Skills Markdown · Tool Use"
+                        link="https://verify.skilljar.com/c/a9r3qn7gtdud"
+                    />
                     <Details
                         type="Microsoft Certified: Azure Fundamentals"
                         time="Issued Apr 2025"
                         place="Microsoft"
                         info="Skills: Cloud Concepts • Azure Architecture • Core Compute Services • Azure Storage • Governance"
+                        link="#"
                     />
                     <Details
                         type="Accelerating End-to-End Data Science Workflows"
                         time="Issued Apr 2024"
                         place="NVIDIA"
                         info="Skills: PySpark · GPU-accelerated toolkit (RAPIDS, cuDF)"
+                        link="#"
                     />
                     <Details
                         type="Professional Data Engineer"
                         time="Issued Feb 2023"
                         place="Google Cloud Official"
                         info="Skills: ETL/ELT Design • Real-time Streaming • ML Model Deployment • Data Quality & Monitoring"
+                        link="#"
                     />
                     <Details
                         type="Associate Cloud Engineer"
                         time="Issued Sep 2022"
                         place="Google Cloud Official"
                         info="Skills: Cloud Architecture • Compute Engine • Cloud Storage • Networking • Security & Compliance"
+                        link="#"
                     />
                 </ul>
             </div>
