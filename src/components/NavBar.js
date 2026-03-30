@@ -66,7 +66,8 @@ const NavBar = () => {
     return (
         <header
             className={`w-full px-32 py-8 font-medium flex items-center justify-between
-        dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8
+        dark:text-light relative lg:px-16 md:px-12 sm:px-8
+        ${isOpen ? 'z-50' : 'z-10'}
         ${router.pathname === '/' ? 'bg-white dark:bg-dark' : ''}
         `}>
 
@@ -129,11 +130,10 @@ const NavBar = () => {
                             <CustomMobileLink href="/" title="Home" className='' toggle={handleClick} />
                             <CustomMobileLink href="/about" title="About" className='' toggle={handleClick} />
                             <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
-                            <CustomMobileLink href="/articles" title="Articles" className='' toggle={handleClick} />
                         </nav>
 
                         <nav className="flex items-center justify-center flex-wrap mt-2">
-                            <motion.a href="https://twitter.com" target={"_blank"}
+                            <motion.a href="https://github.com/alarosai" target={"_blank"}
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
                                 className='w-6 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1 text-dark dark:text-light hover:text-primary transition-colors'

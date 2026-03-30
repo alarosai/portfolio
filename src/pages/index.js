@@ -207,7 +207,7 @@ export default function Home() {
               <motion.h1 variants={fadeInUp} className="text-7xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-brand-neutral-900 leading-[1.1]">
                 Alberto La Rosa <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
-                  AI Product Manager
+                  Product Manager
                 </span>
               </motion.h1>
 
@@ -262,7 +262,7 @@ export default function Home() {
           {/* 2. PROBLEM-AGITATE SECTION */}
           <section id="problem-agitate" className="w-full px-6 py-24 bg-brand-neutral-50">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-2 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-12 items-center">
 
                 {/* LEFT COLUMN: Content */}
                 <div className="flex flex-col gap-12">
@@ -312,7 +312,7 @@ export default function Home() {
                 </div>
 
                 {/* RIGHT COLUMN: Profile Image */}
-                <div className="relative min-h-[500px] h-full rounded-3xl overflow-hidden shadow-2xl">
+                <div className="block md:hidden relative min-h-[500px] h-full rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/profile-blue.png"
                     alt="Alberto La Rosa"
